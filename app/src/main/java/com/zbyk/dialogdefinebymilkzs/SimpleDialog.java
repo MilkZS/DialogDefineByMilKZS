@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -127,7 +128,7 @@ public class SimpleDialog extends DialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view ;
-
+        getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
         switch (type){
             case "all":{
                 view = inflater.inflate(R.layout.dialog_simple_all,container);
